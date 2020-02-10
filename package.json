@@ -35,6 +35,8 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.4"
+    "@babel/runtime": "^7.4.4",
+    "lodash": "^4.17.15",
+    "lodash.template": "^4.5.0"
   }
 }
