@@ -1,0 +1,116 @@
+// Iconos
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "curso-web";
+  src:url("../fonts/curso-web.eot");
+  src:url("../fonts/curso-web.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/curso-web.woff") format("woff"),
+    url("../fonts/curso-web.ttf") format("truetype"),
+    url("../fonts/curso-web.svg#curso-web") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "curso-web" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "curso-web" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-up:before {
+  content: "\61";
+}
+.icon-facebook:before {
+  content: "\62";
+}
+.icon-instagram:before {
+  content: "\63";
+}
+.icon-twitter:before {
+  content: "\64";
+}
+
+[class^="icon-"]::before {
+  position: relative;
+  top: 2px;
+  margin: 0;
+}
+
+// Fin de la integración de iconos
+
+// Reset tamaño de tipografias
+
+// Convertir px a em
+
+@function em($el,$parent:16px) {
+  @return ($el / $parent) * 1em;
+}
+
+// Convertir px a rem
+
+@function rem($el) {
+  @return ($el / 16px) * 1rem;
+}
+
+ //Tamaños de fuentes
+
+$font-root: em(16px);
+$title: $font-root * 2;
+$sub-title: $font-root * 1.7;
+$big-title: $font-root * 3;
+
+$icon: $font-root * 3.5;
+
+$light: 300; //Ancho de fuente
+$normal: 400; //Ancho de fuente
+$bold: 600;
+
+
+h1{font-size: 2rem;}
+h2{font-size: 1.75rem;}
+h3{font-size: 1.5rem;}
+h4{font-size: 1.25rem;}
+
+h5, a, abbr, b, code, dfn, em, i, li, mark, p, pre, strong{
+  font-size: 1rem;
+}
+
+h6, small{font-size: .75rem;}
+
+// Familias tipográficas
+
+$fuente-parrafos: 'Roboto', sans-serif;
+$fuente-titulos: 'Sigmar One', cursive;
+$fuente-menu: 'Sigmar One', cursive;
+
+html {
+  font-family: $fuente-parrafos;
+  font-size: $font-root;
+}
+
+body{
+  font-family: $fuente-parrafos;
+}

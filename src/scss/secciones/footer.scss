@@ -1,0 +1,60 @@
+// Estilos para el footer
+
+// footer{
+//   border: 1px solid yellow;
+// }
+
+.Footer-container{
+  @include footer-container;
+  // border: 2px solid red;
+  & .Card-copy{
+    background-color: color(primary);
+    padding: 1rem 2.5%;
+    text-align: center;
+    color: color(blanco);
+  }
+  & .Box-creditos{
+    background-color: color(footer);
+    text-align: center;
+    padding: .5rem;
+    & p{
+      color: color(blanco);
+    }
+    & a{
+      color: color(cta);
+      &:hover{
+        color: darken(color(cta),7);
+      }
+    }
+  }
+}
+
+
+.btn-ToTop{
+  display: none;
+  position: fixed;
+  padding: 1rem 1.2rem;
+  bottom: 10rem;
+  right: 1rem;
+  z-index: capa(capa10);
+  background-color: color(cta);
+  color: white;
+  cursor: pointer;
+  transition: background-color .3s;
+  outline: none;
+  border: none;
+  &:hover{
+    background-color: rgba(231, 141, 76, 0.8);
+  }
+  &:active{
+    transform: scale(.95);
+  }
+  & i{
+    font-size: 1.5rem;
+    @include mq(lgs){
+      font-size: 1.5rem;
+    }
+  }
+}
+
+

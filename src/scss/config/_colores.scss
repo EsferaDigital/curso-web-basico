@@ -1,0 +1,26 @@
+ //Para obtener color
+
+ @function color($color) {
+  @return map-get($colors,$color);
+}
+
+// Paleta de colores
+
+$colors:(
+  primary: #0E6562,
+  secondary: #A4CCCD,
+  footer: #094442,
+  cta: #E78C4C,
+  success: #77BA5D,
+  blanco: #F4F4F4,
+  alert: #fc030a
+);
+
+$fondo-transparente: rgba(9, 10, 7, 0.8);
+$color-header: linear-gradient(to right, #949fab, #2e3b4b, #1e3651);
+
+ // Con esta función, para capturar el color bastaria poner, por ejemplo:
+ //
+ // div{
+ //   background: color(gris-claro);
+ // }

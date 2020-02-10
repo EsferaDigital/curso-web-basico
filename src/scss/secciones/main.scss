@@ -1,0 +1,244 @@
+// Estilos para etiqueta main
+
+// main{
+//   border: 10px solid blue;
+// }
+
+.Main-container{
+  @include main-container;
+  margin-top: $altura-header;
+}
+
+.Banner{
+  // border: 2px solid red;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: -$altura-header;
+  margin-bottom: -$altura-header;
+  background-image: img("banner.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &:before{
+    position: absolute;
+    content: "";
+    z-index: capa(capa1);
+    width: 100%;
+    height: 100%;
+    background-color: color(primary);
+    opacity: .7;
+  }
+
+}
+
+.Container-banner{
+  width: 100%;
+  text-align: center;
+  padding: 10rem 0;
+  display: grid;
+  position: relative;
+  z-index: capa(capa2);
+  grid-template-areas: "titulo"
+                       "subtitulo"
+                       "slogan"
+                       "btn-cta";
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, minmax(min-content, max-content));
+  justify-items: center;
+  align-items: center;
+  & h1, h2, p, a{
+    position: relative;
+    z-index: capa(capa2);
+    margin: 1rem auto;
+  }
+  & h1{
+    grid-area: titulo;
+    color: color(blanco);
+    font-family: $fuente-titulos;
+    @include mq(md){
+      font-size: 2.3rem;
+    }
+  }
+  & h2{
+    grid-area: subtitulo;
+    color: color(cta);
+  }
+  & p{
+    grid-area: slogan;
+    color: color(blanco);
+    font-size: 1.2rem;
+  }
+  & a{
+    grid-area: btn-cta;
+    text-transform: uppercase;
+    margin: 2.5rem auto 0;
+    border: none;
+    padding: .7rem 1rem;
+    outline: none;
+    background-color: color(cta);
+    cursor: pointer;
+    transition: background-color .3s;
+    color: color(blanco);
+    font-family: $fuente-parrafos;
+    &:hover{
+      background-color: darken(color(cta), 5);
+    }
+    &:active{
+      transform: scale(.95);
+    }
+  }
+
+}
+
+.Box-titulo{
+  text-align: center;
+  padding: 1rem 0;
+  font-family: $fuente-titulos;
+  background-color: color(primary);
+  & h2{
+    color: color(blanco);
+  }
+}
+
+.Container-cards{
+  padding: 2.5%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: .5rem;
+  @include mq(md){
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+}
+
+.Card-text{
+  border: 1px solid color(secondary);
+  transition: transform .3s;
+  &:hover{
+    transform: scale(1.01);
+    box-shadow: $shadow-flat;
+  }
+  & h3{
+    color: color(blanco);
+    text-align: center;
+    background-color: color(success);
+    font-family: $fuente-titulos;
+    padding: .5rem 0;
+  }
+  & p{
+    padding: .5rem;
+    @include mq(md){
+      padding: 1rem;
+    }
+  }
+}
+
+.Container-figure{
+  @include container-grid(1fr, 1fr, .5rem);
+  // border: 2px solid red;
+  padding: 2.5%;
+  @include mq(md){
+    @include container-grid(repeat(2, 1fr), 1fr, 1rem);
+  }
+  @include mq(lgs){
+    @include container-grid(repeat(4, 1fr), 1fr, 1rem);
+  }
+  & .Figure{
+    border: 1px solid color(success);
+    transition: transform, box-shadow.3s;
+    background-color: color(success);
+    &:hover{
+      transform: scale(1.01);
+      box-shadow: $shadow-flat;
+    }
+    &-img{
+      max-width: 100%;
+      & img{
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+    &-name h3{
+      text-align: center;
+      background-color: color(success);
+      padding: .5rem;
+      color: color(blanco);
+      font-family: $fuente-titulos;
+    }
+    &-description p{
+      padding: .5rem;
+      background-color: color(blanco);
+    }
+  }
+}
+
+.Container-content{
+  // border: 2px solid red;
+  & .Box-map{
+    width: 100%;
+    height: 100%;
+    & .Mapa{
+      position: relative;
+      width: 100%;
+      padding: 1rem;
+      & a{
+        width: 100%;
+        cursor: pointer;
+      }
+      & span{
+        position: absolute;
+        display: block;
+        width: auto;
+        top: 30%;
+        left: 0;
+        right: 0;
+        z-index: capa(capa5);
+        color: color(cta);
+        // border: 1px solid red;
+        text-align: center;
+      }
+      & img{
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  .Container-sociales{
+    background-color: color(success);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    & .Card-social{
+      padding: 1rem;
+      & a i{
+        // border: 2px solid red;
+        color: color(blanco);
+        font-size: 2rem;
+        transition: color .3s;
+        &:hover{
+          color: darken(color(blanco), 5);
+        }
+      } 
+    }
+  }
+}
+
+
+
+.Mapa-responsive{
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  & iframe, object, embed{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
